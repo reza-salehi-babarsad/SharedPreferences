@@ -3,6 +3,7 @@ package com.rezoo.sharedpreferences
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.rezoo.sharedpreferences.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +25,9 @@ class MainActivity : AppCompatActivity() {
                     putString("family",family)
                     apply()
                 }
+                Toast.makeText(this@MainActivity,"Data Saved",Toast.LENGTH_LONG).show()
+                edName.text.clear()
+                edFamily.text.clear()
             }
             btnShow.setOnClickListener {
             val name = sharePref.getString("name",null)
